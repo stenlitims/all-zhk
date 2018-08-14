@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <title>mod2</title>
+</head>
+
+<body data-lang="uk">
+  <div class="wrap-sections container">
+    <h2 class="home-title">Квартиры</h2>
+
+    <div class="js-pr-list" style="display:none">
+      <div data-name="Green Side" data-id="83" data-api="https://greenside.com.ua/api/all-api"></div>
+      <div data-name="ЖК City Park" data-id="101" data-api="https://city-park.com.ua/api/all-api"></div>
+      <div data-name="Синергия 3" data-id="21" data-api="http://synergy3.com.ua/api/all-api/?zk=s3"></div>
+      <div data-name="Синергия 3+" data-id="139" data-api="http://synergy3.com.ua/api/all-api/?zk=s3p"></div>
+      <div data-name="Синергия 2+" data-id="85" data-api=""></div>
+      <div data-name="Синергия 2" data-id="12" data-api=""></div>
+      <div data-name="Колибри" data-id="35" data-api=""></div>
+      <div data-name="Синергия 1" data-id="25" data-api=""></div>
+      <div data-name="Ворзель" data-id="42" data-api=""></div>
+      <div data-name="Ирпень, ул. Курская 1Г" data-id="44" data-api=""></div>
+      <div data-name="ул. Новооскольская" data-id="49" data-api=""></div>
+    </div>
+
+    <script>
+      var allSec = {
+        // Синергия 3
+        21: {
+          1: [{
+              lev: 17,
+              flats: 12
+            },{
+              lev: 16,
+              flats: 12
+            },{
+              lev: 15,
+              flats: 12
+            },{
+              lev: 14,
+              flats: 12
+            },{
+              lev: 13,
+              flats: 12
+            },{
+              lev: 12,
+              flats: 12
+            },{
+              lev: 11,
+              flats: 12
+            },{
+              lev: 10,
+              flats: 12
+            },{
+              lev: 9,
+              flats: 12
+            },
+            {
+              lev: 8,
+              flats: 12
+            },
+            {
+              lev: 7,
+              flats: 12
+            },
+            {
+              lev: 6,
+              flats: 12
+            },
+            {
+              lev: 5,
+              flats: 12
+            },
+            {
+              lev: 4,
+              flats: 12
+            },
+            {
+              lev: 3,
+              flats: 12
+            },
+            {
+              lev: 2,
+              flats: 0
+            },
+            {
+              lev: 1,
+              flats: 0
+            }
+          ],
+          4: [{
+              lev: 10,
+              flats: 13
+            },{
+              lev: 9,
+              flats: 13
+            },
+            {
+              lev: 8,
+              flats: 13
+            },
+            {
+              lev: 7,
+              flats: 13
+            },
+            {
+              lev: 6,
+              flats: 13
+            },
+            {
+              lev: 5,
+              flats: 13
+            },
+            {
+              lev: 4,
+              flats: 13
+            },
+            {
+              lev: 3,
+              flats: 13
+            },
+            {
+              lev: 2,
+              flats: 13
+            },
+            {
+              lev: 1,
+              flats: 0
+            }
+          ],
+          8: [{
+              lev: 10,
+              flats: 9
+            },{
+              lev: 9,
+              flats: 9
+            },
+            {
+              lev: 8,
+              flats: 9
+            },
+            {
+              lev: 7,
+              flats: 9
+            },
+            {
+              lev: 6,
+              flats: 9
+            },
+            {
+              lev: 5,
+              flats: 9
+            },
+            {
+              lev: 4,
+              flats: 9
+            },
+            {
+              lev: 3,
+              flats: 9
+            },
+            {
+              lev: 2,
+              flats: 9
+            },
+            {
+              lev: 1,
+              flats: 9
+            }
+          ],
+          9: [{
+              lev: 10,
+              flats: 10
+            },{
+              lev: 9,
+              flats: 10
+            },
+            {
+              lev: 8,
+              flats: 10
+            },
+            {
+              lev: 7,
+              flats: 10
+            },
+            {
+              lev: 6,
+              flats: 10
+            },
+            {
+              lev: 5,
+              flats: 10
+            },
+            {
+              lev: 4,
+              flats: 10
+            },
+            {
+              lev: 3,
+              flats: 10
+            },
+            {
+              lev: 2,
+              flats: 10
+            },
+            {
+              lev: 1,
+              flats: 10
+            }
+          ]
+        },
+        // Green Side
+        83: {
+          1: [{
+              lev: 19,
+              flats: 12
+            }, {
+              lev: 18,
+              flats: 12
+            }, {
+              lev: 17,
+              flats: 12
+            }, {
+              lev: 16,
+              flats: 12
+            }, {
+              lev: 15,
+              flats: 12
+            }, {
+              lev: 14,
+              flats: 12
+            }, {
+              lev: 13,
+              flats: 12
+            }, {
+              lev: 12,
+              flats: 12
+            }, {
+              lev: 1,
+              flats: 12
+            }, {
+              lev: 10,
+              flats: 12
+            }, {
+              lev: 9,
+              flats: 12
+            },
+            {
+              lev: 8,
+              flats: 12
+            },
+            {
+              lev: 7,
+              flats: 12
+            },
+            {
+              lev: 6,
+              flats: 12
+            },
+            {
+              lev: 5,
+              flats: 12
+            },
+            {
+              lev: 4,
+              flats: 12
+            },
+            {
+              lev: 3,
+              flats: 12
+            },
+            {
+              lev: 2,
+              flats: 12
+            },
+            {
+              lev: 1,
+              flats: 12
+            }
+          ],
+          3: [{
+              lev: 19,
+              flats: 10
+            }, {
+              lev: 18,
+              flats: 10
+            }, {
+              lev: 17,
+              flats: 10
+            }, {
+              lev: 16,
+              flats: 10
+            }, {
+              lev: 15,
+              flats: 10
+            }, {
+              lev: 14,
+              flats: 10
+            }, {
+              lev: 13,
+              flats: 10
+            }, {
+              lev: 12,
+              flats: 10
+            }, {
+              lev: 11,
+              flats: 10
+            }, {
+              lev: 10,
+              flats: 10
+            }, {
+              lev: 9,
+              flats: 10
+            },
+            {
+              lev: 8,
+              flats: 10
+            },
+            {
+              lev: 7,
+              flats: 10
+            },
+            {
+              lev: 6,
+              flats: 10
+            },
+            {
+              lev: 5,
+              flats: 10
+            },
+            {
+              lev: 4,
+              flats: 10
+            },
+            {
+              lev: 3,
+              flats: 10
+            },
+            {
+              lev: 2,
+              flats: 10
+            },
+            {
+              lev: 1,
+              flats: 0
+            }
+          ],
+          5: [{
+              lev: 19,
+              flats: 12
+            }, {
+              lev: 18,
+              flats: 12
+            }, {
+              lev: 17,
+              flats: 12
+            }, {
+              lev: 16,
+              flats: 12
+            }, {
+              lev: 15,
+              flats: 12
+            }, {
+              lev: 14,
+              flats: 12
+            }, {
+              lev: 13,
+              flats: 12
+            }, {
+              lev: 12,
+              flats: 12
+            }, {
+              lev: 11,
+              flats: 12
+            }, {
+              lev: 10,
+              flats: 12
+            }, {
+              lev: 9,
+              flats: 12
+            },
+            {
+              lev: 8,
+              flats: 12
+            },
+            {
+              lev: 7,
+              flats: 12
+            },
+            {
+              lev: 6,
+              flats: 12
+            },
+            {
+              lev: 5,
+              flats: 12
+            },
+            {
+              lev: 4,
+              flats: 12
+            },
+            {
+              lev: 3,
+              flats: 12
+            },
+            {
+              lev: 2,
+              flats: 12
+            },
+            {
+              lev: 1,
+              flats: 0
+            }
+          ]
+        },
+        // ЖК City Park
+        101: {
+          1: [{
+              lev: 16,
+              flats: 6
+            }, {
+              lev: 15,
+              flats: 6
+            }, {
+              lev: 14,
+              flats: 6
+            }, {
+              lev: 13,
+              flats: 6
+            }, {
+              lev: 12,
+              flats: 6
+            }, {
+              lev: 11,
+              flats: 6
+            }, {
+              lev: 10,
+              flats: 6
+            }, {
+              lev: 9,
+              flats: 6
+            },
+            {
+              lev: 8,
+              flats: 6
+            },
+            {
+              lev: 7,
+              flats: 6
+            },
+            {
+              lev: 6,
+              flats: 6
+            },
+            {
+              lev: 5,
+              flats: 6
+            },
+            {
+              lev: 4,
+              flats: 6
+            },
+            {
+              lev: 3,
+              flats: 6
+            },
+            {
+              lev: 2,
+              flats: 6
+            },
+            {
+              lev: 1,
+              flats: 0
+            }
+          ],
+          3: [{
+              lev: 16,
+              flats: 12
+            }, {
+              lev: 15,
+              flats: 12
+            }, {
+              lev: 14,
+              flats: 12
+            }, {
+              lev: 13,
+              flats: 12
+            }, {
+              lev: 12,
+              flats: 12
+            }, {
+              lev: 11,
+              flats: 12
+            }, {
+              lev: 10,
+              flats: 12
+            }, {
+              lev: 9,
+              flats: 12
+            },
+            {
+              lev: 8,
+              flats: 12
+            },
+            {
+              lev: 7,
+              flats: 12
+            },
+            {
+              lev: 6,
+              flats: 12
+            },
+            {
+              lev: 5,
+              flats: 12
+            },
+            {
+              lev: 4,
+              flats: 12
+            },
+            {
+              lev: 3,
+              flats: 12
+            },
+            {
+              lev: 2,
+              flats: 12
+            },
+            {
+              lev: 1,
+              flats: 0
+            }
+          ]
+        },
+        // Синергия 3+
+        139: {
+          1: [{
+              lev: 9,
+              flats: 8
+            },
+            {
+              lev: 8,
+              flats: 8
+            },
+            {
+              lev: 7,
+              flats: 8
+            },
+            {
+              lev: 6,
+              flats: 8
+            },
+            {
+              lev: 5,
+              flats: 8
+            },
+            {
+              lev: 4,
+              flats: 8
+            },
+            {
+              lev: 3,
+              flats: 8
+            },
+            {
+              lev: 2,
+              flats: 8
+            },
+            {
+              lev: 1,
+              flats: 0
+            }
+          ],
+          2: [{
+              lev: 9,
+              flats: 8
+            },
+            {
+              lev: 8,
+              flats: 8
+            },
+            {
+              lev: 7,
+              flats: 8
+            },
+            {
+              lev: 6,
+              flats: 8
+            },
+            {
+              lev: 5,
+              flats: 8
+            },
+            {
+              lev: 4,
+              flats: 8
+            },
+            {
+              lev: 3,
+              flats: 8
+            },
+            {
+              lev: 2,
+              flats: 8
+            },
+            {
+              lev: 1,
+              flats: 3
+            }
+          ],
+          3: [{
+              lev: 9,
+              flats: 9
+            },
+            {
+              lev: 8,
+              flats: 9
+            },
+            {
+              lev: 7,
+              flats: 9
+            },
+            {
+              lev: 6,
+              flats: 9
+            },
+            {
+              lev: 5,
+              flats: 9
+            },
+            {
+              lev: 4,
+              flats: 9
+            },
+            {
+              lev: 3,
+              flats: 9
+            },
+            {
+              lev: 2,
+              flats: 9
+            },
+            {
+              lev: 1,
+              flats: 0
+            }
+          ],
+          4: [{
+              lev: 9,
+              flats: 9
+            },
+            {
+              lev: 8,
+              flats: 9
+            },
+            {
+              lev: 7,
+              flats: 9
+            },
+            {
+              lev: 6,
+              flats: 9
+            },
+            {
+              lev: 5,
+              flats: 9
+            },
+            {
+              lev: 4,
+              flats: 9
+            },
+            {
+              lev: 3,
+              flats: 9
+            },
+            {
+              lev: 2,
+              flats: 9
+            },
+            {
+              lev: 1,
+              flats: 0
+            }
+          ]
+        }
+      };
+
+    </script>
+
+    <div id="app"></div>
+
+  </div>
+  <!-- built files will be auto injected -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+</body>
+
+</html>
